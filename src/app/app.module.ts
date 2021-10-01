@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { UserNavbarComponent } from './navbar/navbar.component';
 import { UserHomeComponent } from './home/home.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatToolbarModule,
     MatCardModule,
     MatSidenavModule,
+    MatListModule,
   ],
   declarations: [AppComponent, UserNavbarComponent, UserHomeComponent],
   bootstrap: [AppComponent],

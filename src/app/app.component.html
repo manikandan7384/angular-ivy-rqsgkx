@@ -1,19 +1,69 @@
-<mat-drawer-container autosize>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#" mat-button (click)="drawer.toggle()"
-        >Navbar</a
-      >
-    </div>
-  </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" mat-button (click)="drawer.toggle()"
+      ><span class="navbar-toggler-icon mr-3"></span>Portal</a
+    >
+    <form class="d-flex">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 
-  <div class="container">
-    <mat-drawer #drawer class="example-sidenav" mode="over">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
-    </mat-drawer>
+<mat-drawer-container class="bg-white" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="over">
+    <section class="container">
+      <mat-list role="list">
+        <mat-list-item role="listitem">Item 1</mat-list-item>
+        <mat-list-item role="listitem">Item 2</mat-list-item>
+        <mat-list-item role="listitem">Item 3</mat-list-item>
+      </mat-list>
+    </section>
+  </mat-drawer>
+  <div class="container bg-white" style="height:calc(100vh - 68px)">
+    <main>
+      <h1 class="h1">Home</h1>
+      <small class="fst-italic"
+        >Welcome to the portal, an interactive medium for communicate between
+        your employees.</small
+      >
+      <hr />
+      <div class="row">
+        <div class="col" *ngFor="let card of cards">
+          <div class="card mb-3">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="180"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Image cap"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#868e96"></rect>
+              <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title">{{ card.title }}</h5>
+              <p class="card-text">
+                {{ card.description }}
+              </p>
+              <p class="card-text">
+                <small class="text-muted"
+                  >Last updated {{ card.updatedOn }}</small
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 </mat-drawer-container>
