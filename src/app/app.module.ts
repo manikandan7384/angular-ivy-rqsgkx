@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
@@ -13,12 +14,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { UserNavbarComponent } from './navbar/navbar.component';
 import { UserHomeComponent } from './home/home.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
+    BrowserAnimationsModule,
     MatSliderModule,
     MatIconModule,
     MatButtonModule,
@@ -26,6 +29,7 @@ import { UserHomeComponent } from './home/home.component';
     MatDividerModule,
     MatToolbarModule,
     MatCardModule,
+    MatSidenavModule,
   ],
   declarations: [AppComponent, UserNavbarComponent, UserHomeComponent],
   bootstrap: [AppComponent],
